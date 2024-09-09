@@ -31,7 +31,29 @@ plt.title("IBOVESPA, DOLAR, S&P500 (Normalizados) - Últimos 6 meses")
 plt.legend()
 
 # Show the plot
-plt.show()
+#plt.show()
 
 #Salvar imagem
 #plt.savefig()
+
+retornos_diarios = dados_mercado.pct_change()
+
+#print(retornos_diarios)
+
+retorno_ibovespa = retornos_diarios["IBOVESPA"].iloc[-1]
+
+retorno_ibovespa = str(round(retorno_ibovespa * 100, 2)) + "%"
+
+print("ibovespa: " + retorno_ibovespa)
+
+retorno_dolar = retornos_diarios["DOLAR"].iloc[-1]
+
+retorno_dolar = str(round(retorno_dolar * 100, 2)) + "%"
+
+print("dolar: " + retorno_dolar)
+
+retorno_sp = retornos_diarios["S&P500"].iloc[-1]
+
+retorno_sp = str(round(retorno_sp * 100, 2)) + "%"
+
+print("sp: " + retorno_sp)
