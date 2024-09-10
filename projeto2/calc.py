@@ -1,0 +1,12 @@
+from datetime import datetime, date
+from matplotlib import pyplot as plt
+import numpy as np
+from bcb import sgs
+
+capital = float(input("Digite o capital investido: "))
+
+frequencia = input("Digite a frquência do período (Y, M, D): ")
+
+inicio = input ("Digite a data inicial maior do que 1995/01/01 no formato YYYY/MM/DD: ")
+
+final = input ("Digite a data final no formato YYYY/MM/DD: ")
