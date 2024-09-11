@@ -10,3 +10,7 @@ frequencia = input("Digite a frquência do período (Y, M, D): ")
 inicio = input ("Digite a data inicial maior do que 1995/01/01 no formato YYYY/MM/DD: ")
 
 final = input ("Digite a data final no formato YYYY/MM/DD: ")
+
+data_inicial = datetime.strptime(inicio, "%Y/%m/%d").date()
+
+data_final = datetime.strptime(final, "%Y/%m/%d").date()
