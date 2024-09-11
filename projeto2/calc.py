@@ -16,3 +16,9 @@ data_inicial = datetime.strptime(inicio, "%Y/%m/%d").date()
 data_final = datetime.strptime(final, "%Y/%m/%d").date()
 
 taxas_selic = sgs.get({"selic":11}, start= data_inicial, end = data_final)
+
+taxas_selic = taxas_selic/100
+
+capital_acumulado = capital + (1 + taxas_selic["selic"]).cumprod() - 1
+
+capital_com_frquencia = capital_acumulado.resample(frequencia).last()
