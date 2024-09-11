@@ -16,3 +16,11 @@ janela = janela.reset_index()
 janela["data_inicial"] = janela["Date"].shift(500)
 
 janela = janela.dropna()
+
+janela.columns = ["data_final", "retorno_selic", "data_inicial"]
+
+maior_retorno = janela["retorno_selic"].max()
+
+gabarito = janela[janela["retorno_selic"] == maior_retorno]
+
+print(gabarito)
