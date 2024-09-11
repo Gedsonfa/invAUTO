@@ -14,3 +14,5 @@ final = input ("Digite a data final no formato YYYY/MM/DD: ")
 data_inicial = datetime.strptime(inicio, "%Y/%m/%d").date()
 
 data_final = datetime.strptime(final, "%Y/%m/%d").date()
+
+taxas_selic = sgs.get({"selic":11}, start= data_inicial, end = data_final)
