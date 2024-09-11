@@ -11,6 +11,8 @@ taxas_selic = sgs.get({"selic":11}, start= data_inicial, end = data_final)/100
 
 janela = ((1 + taxas_selic).rolling(window = 500).apply(np.prod) - 1)
 
-janela = janela.dropna()
+janela = janela.reset_index()
 
-print(janela)
+janela["data_inicial"] = janela["Date"].shift(500)
+
+janela = janela.dropna()
